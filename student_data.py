@@ -240,4 +240,4 @@ logger.debug(f"Saving DataFrame to Excel file: {excel_filename}")
 df.to_excel(excel_filename, index=False)
 logger.info(f"Data successfully written to {excel_filename} file!")
 
-print("Data successfully written to student_data.xlsx file!")
+
