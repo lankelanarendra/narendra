@@ -23,14 +23,16 @@ class AbhiBusAutomation:
         time.sleep(5)
 
         # Enter Mobile Number
-        mobile_input = self.driver.find_element(By.XPATH, "//input[@type='number']")
-        mobile_input.send_keys("9121554690")
+        mobile_input = self.driver.find_element(By.XPATH, "//div[@class='container form-control  ']//input[@type='text']")
+        mobile_input.send_keys("6301945225")
         time.sleep(5)
 
         # login button
         login_button = self.driver.find_element(By.XPATH, "//button[normalize-space()='Login']")
         login_button.click()
         time.sleep(20)
+
+
 
      #Enter the from details
      def from_to_details(self):
@@ -78,7 +80,7 @@ class AbhiBusAutomation:
 
      #Bus Type
      def bus_type(self):
-         bus_types = self.driver.find_elements(By.XPATH,"//*[@class='container filter-list ']//a//span[2]")
+         bus_types = self.driver.find_elements(By.XPATH,"//div[@id='seat-filter-bus-type']//a")
 
          for type in bus_types:
              if type.text == "AC":
@@ -91,7 +93,7 @@ class AbhiBusAutomation:
      #search buses
      def search_bus_partner(self):
         self.driver.find_element(By.XPATH,"//div[contains(text(),'Bus Partner')]").click()
-        search_bus = self.driver.find_elements(By.XPATH,"//div[contains(@class,'scrollable-container filter-container primary hide-scrollbar')]//div[contains(@class,'primary')]//div//label")
+        search_bus = self.driver.find_elements(By.XPATH,"//div[@class='scrollable-container  primary ']//label")
         # print("prl bus search len",len(search_bus))
         # print("busses list:",search_bus)
 
